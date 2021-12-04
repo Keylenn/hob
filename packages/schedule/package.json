@@ -1,0 +1,16 @@
+{
+  "name": "@hob/schedule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "hejilun",
+  "license": "MIT",
+  "dependencies": {
+    "art-template": "^4.13.2",
+    "nodemailer": "^6.7.2"
+  }
+}

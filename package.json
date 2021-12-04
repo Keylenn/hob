@@ -1,0 +1,24 @@
+{
+  "name": "ho",
+  "version": "1.0.0",
+  "description": "ho business",
+  "main": "index.js",
+  "scripts": {
+    "schedule": "node packages/schedule"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keylenn/ho.git"
+  },
+  "keywords": [],
+  "author": "Keylenn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Keylenn/ho/issues"
+  },
+  "homepage": "https://github.com/Keylenn/ho#readme",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "moment": "^2.29.1"
+  }
+}

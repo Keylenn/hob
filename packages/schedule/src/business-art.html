@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <style>
+    details {
+        border-radius: 4px;
+        padding: .5em .5em 0;
+    }
+
+    summary {
+        font-weight: bold;
+        margin: -.5em -.5em 0;
+        padding: .5em;
+    }
+
+    details[open] {
+        padding: .5em;
+    }
+
+    details[open] summary {
+        margin-bottom: .5em;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <p>以下即将到期的保险/年审单, 请及时处理：</p>
+    <ul>
+      {{each list}}
+      <li>
+        <details>
+          <summary>{{$value.name}}的{{$value.category}}还有<em style='color: red;font-size: 20px;'>{{$value.distanceExpDays}}</em>天过期
+          </summary>
+          {{if $value.expDate}}
+          <p>到期时间：{{$value.expDate}}</p>
+          {{/if}}
+
+          {{if $value.license}}
+          <p>车牌：{{$value.license}}</p>
+          {{/if}}
+
+          {{if $value.amount}}
+          <p>金额：{{$value.amount}}</p>
+          {{/if}}
+
+          {{if $value.phone}}
+          <p>联系方式：<a href='tel://{{$value.phone}}'>{{$value.phone}} 📞</a></p>
+          {{/if}}
+
+          {{if $value.remark}}
+          <p>备注：{{$value.remark}}</p>
+          {{/if}}
+        </details>
+      </li>
+      {{/each}}
+    </ul>
+    </section>
+</body>
+</html>
