@@ -31,13 +31,21 @@
 </head>
 <body>
   <section>
-    <p>以下即将到期的保险/年审单, 请及时处理：</p>
+    <p>请及时处理以下的保险/年审单：</p>
     <ul>
       {{each list}}
       <li>
         <details>
+          {{if $value.distanceExpDays > 0}}
           <summary>{{$value.name}}的{{$value.category}}还有<em style='color: red;font-size: 20px;'>{{$value.distanceExpDays}}</em>天过期
           </summary>
+          {{/if}}
+
+          {{if $value.distanceExpDays <= 0}}
+          <summary>{{$value.name}}的{{$value.category}}<em style='color: red;font-size: 20px;'>已过期{{$value.distanceExpDays * -1}}</em>天
+          </summary>
+          {{/if}}
+
           {{if $value.expDate}}
           <p>到期时间：{{$value.expDate}}</p>
           {{/if}}
