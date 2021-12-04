@@ -40,7 +40,6 @@ function job() {
     
       mail({
         ...restMailConfig,
-        to,
         html,
       })
     })
