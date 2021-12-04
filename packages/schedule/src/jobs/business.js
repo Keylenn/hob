@@ -1,7 +1,9 @@
 const moment = require('moment')
 const template = require('art-template')
+const { NodeHtmlMarkdown } = require('node-html-markdown')
 const api = require('../../../api')
 const mail = require('../utils/mail')
+const ftServer = require('../utils/ftServer')
 
 const BIN_ID = process.env.bid
 
@@ -34,13 +36,18 @@ function job() {
 
       if(!pendingMailList.length) return
 
+      // mail
       const {tpl, ...restMailConfig} = data?.record?.mailConfig ?? {}
-      
-      const html = template.render(tpl, {list: pendingMailList})
-    
       mail({
         ...restMailConfig,
-        html,
+        html: template.render(tpl, {list: pendingMailList}),
+      })
+
+      // https://sct.ftqq.com
+      const {title, users} = data?.record?.ftConfig ?? {}
+      ftServer(users, {
+        title,
+        desp: NodeHtmlMarkdown.translate(`${html}`)
       })
     })
     .catch((err) => {
