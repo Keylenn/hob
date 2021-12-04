@@ -38,9 +38,11 @@ function job() {
 
       // mail
       const {tpl, ...restMailConfig} = data?.record?.mailConfig ?? {}
+      const html = template.render(tpl, {list: pendingMailList})
+      
       mail({
         ...restMailConfig,
-        html: template.render(tpl, {list: pendingMailList}),
+        html,
       })
 
       // https://sct.ftqq.com
