@@ -11,7 +11,7 @@ async function ftServer(urlList = [], ftData) {
     }))
 
     axios.all(iterable).then(axios.spread((...resList)=>{
-      resList.forEach((res, idx) => console.log(`ftServer res-${idx}:`, res.data))
+      resList.forEach((res, idx) => console.log(`Log | ftServer res-${idx} |`, res.data))
     }))
   } catch (error) {
     console.error('Log | Error in ftServer |', error)
