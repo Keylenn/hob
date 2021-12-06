@@ -34,9 +34,13 @@ function job() {
 
       console.log('Log | pendingMailList ｜', pendingMailList)
 
-      if(!pendingMailList.length) return
+       // Notify whiteList（weixin）
+      if(!pendingMailList.length) {
+        ftServer.apply(null, data?.record?.ftConfig?.whiteListArgs)
+        return
+      }
 
-      // mail
+      // Notify Subscribers（mail + weixin）
       const {tpl, ...restMailConfig} = data?.record?.mailConfig ?? {}
       const html = template.render(tpl, {list: pendingMailList})
       
