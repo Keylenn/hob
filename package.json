@@ -4,7 +4,8 @@
   "description": "ho business",
   "main": "index.js",
   "scripts": {
-    "schedule": "node packages/schedule"
+    "schedule:business": "node packages/schedule/src/jobs/business",
+    "schedule:clife": "node packages/schedule/src/jobs/clife"
   },
   "repository": {
     "type": "git",
