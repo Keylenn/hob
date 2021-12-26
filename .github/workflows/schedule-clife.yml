@@ -1,5 +1,5 @@
 
-name: Schedule job
+name: Schedule clife job
 
 on:
   push:
