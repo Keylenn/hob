@@ -4,7 +4,7 @@ name: Schedule business job
 on:
   push:
     branches:
-      - schedule
+      - business
   # https://crontab.guru/examples.html
   # UCT +8: 10.30 (+- 20min) am
   schedule:
