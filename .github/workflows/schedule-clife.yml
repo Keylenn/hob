@@ -4,7 +4,7 @@ name: Schedule clife job
 on:
   push:
     branches:
-      - schedule
+      - clife
   # https://crontab.guru/examples.html
   # UCT +8: 8.40 (+- 20min) am
   # UCT +8: 22.40 (+- 20min) pm
