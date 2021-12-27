@@ -9,7 +9,7 @@ on:
   # UCT +8: 8.40 (+- 20min) am
   # UCT +8: 22.40 (+- 20min) pm
   schedule:
-    - cron: '40 0 * * *'
+    - cron: '40 23 * * *'
     - cron: '40 14 * * *'
 
 jobs:
