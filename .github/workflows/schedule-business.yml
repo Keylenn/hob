@@ -22,10 +22,10 @@ jobs:
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '14.x'
+        node-version: '16.x'
     
     - name: Schedule job
       env:
         jbsk: ${{ secrets.JSON_BIN_SECRET_KEY }}
         bid: ${{ secrets.BUSINESS_BIN_ID }}
-      run: npm install -g pnpm && pnpm install --registry=https://registry.npm.taobao.org && pnpm run schedule:business
+      run: npm install -g pnpm@8.3.1 && pnpm install --registry=https://registry.npm.taobao.org && pnpm run schedule:business
